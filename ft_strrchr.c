@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_words.c                                      :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarrei <macarrei@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 16:06:30 by macarrei          #+#    #+#             */
-/*   Updated: 2024/02/05 16:06:34 by macarrei         ###   ########.fr       */
+/*   Created: 2024/02/07 16:52:55 by macarrei          #+#    #+#             */
+/*   Updated: 2024/02/07 16:54:12 by macarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	count_words(char *str, char c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	count;
-	int	i;
+	int		lenstr;
+	char	*str;
 
-	count = 0;
-	i = 0;
-	while (str[i])
+	str = (char *)s;
+	lenstr = ft_strlen(s) + 1;
+	if (!s)
+		return (NULL);
+	while (lenstr >= 0)
 	{
-		if (str[i] == c)
-		{
-			while (str[i] == c && str[i])
-				i++;
-			count += 1;
-		}
-		i++;
+		if ((int)str[lenstr] == c)
+			return (str + lenstr);
+		lenstr--;
 	}
-	return (count);
+	return (str);
 }
 /*
-int	main(int ac, char **av)
+int	main (int ac, char **av)
 {
-	if(ac == 3)
-		printf("%d\n", count_words(av[1], av[2][0]));
-	else
-		printf("\n");
+	(void)ac;
+	printf("%s\n", ft_strrchr(av[1], 'z'));
+	return (0);
 }*/

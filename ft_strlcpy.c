@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_words.c                                      :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarrei <macarrei@student.42Porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 16:06:30 by macarrei          #+#    #+#             */
-/*   Updated: 2024/02/05 16:06:34 by macarrei         ###   ########.fr       */
+/*   Created: 2024/02/06 18:44:19 by macarrei          #+#    #+#             */
+/*   Updated: 2024/02/07 16:08:16 by macarrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	count_words(char *str, char c)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	count;
-	int	i;
+	size_t	srclen;
+	size_t	i;
 
-	count = 0;
 	i = 0;
-	while (str[i])
+	srclen = ft_strlen(src);
+	if (!size)
+		return (srclen);
+	while (src[i] && i < size - 1)
 	{
-		if (str[i] == c)
-		{
-			while (str[i] == c && str[i])
-				i++;
-			count += 1;
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (count);
+	dest[i] = 0;
+	return (srclen);
 }
-/*
-int	main(int ac, char **av)
-{
-	if(ac == 3)
-		printf("%d\n", count_words(av[1], av[2][0]));
-	else
-		printf("\n");
-}*/
