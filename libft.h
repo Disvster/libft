@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macarrei <macarrei@student.42Porto.com>    +#+  +:+       +#+        */
+/*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 17:26:45 by macarrei          #+#    #+#             */
-/*   Updated: 2024/02/06 17:26:57 by macarrei         ###   ########.fr       */
+/*   Created: 2025/04/08 13:06:18 by manmaria          #+#    #+#             */
+/*   Updated: 2025/04/08 13:07:33 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_tolower(int c)
-{
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
-}
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
+
+#endif
