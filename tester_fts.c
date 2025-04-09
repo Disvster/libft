@@ -31,3 +31,27 @@ int	main(int ac, char *av[])
 	printf("\n");
 	return 0;
 }*/
+
+//       !  ft_memmove WIP  !
+//          n = 5
+//src  ->	       *12345___
+//dest ->             *45___
+//mmmove(dest) -> *123*12345
+
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	(void)ac;
+	char	*og = "---12345";
+	char	*str = og + 3;
+	char	*t_av1 = str + 3;
+
+	t_av1 += 3;
+	if (atoi(av[1]) == 1)
+		printf("OG memmove -> %s\n", memmove(t_av1, str, atoi(av[3])));
+	else
+		printf("ft_memmove -> %s\n", ft_memmove(t_av1, str, atoi(av[3])));
+	return 0;
+}*/
