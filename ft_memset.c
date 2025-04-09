@@ -6,7 +6,7 @@
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 18:52:23 by manmaria          #+#    #+#             */
-/*   Updated: 2025/04/08 18:55:02 by manmaria         ###   ########.fr       */
+/*   Updated: 2025/04/09 13:23:23 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int		v;
-	char	*a;
+	size_t			i;
+	unsigned char	*tab;
+
+	i = 0;
+	tab = s;
+	if (!n)
+		return (s);
+	while (i < n)
+		tab[i] = c;
+	return (s);
 }
