@@ -6,7 +6,7 @@
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 13:06:18 by manmaria          #+#    #+#             */
-/*   Updated: 2025/04/09 11:37:59 by manmaria         ###   ########.fr       */
+/*   Updated: 2025/04/09 13:30:55 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 //# include <string.h>
 # include <stdlib.h>
 
+void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
