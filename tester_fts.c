@@ -34,9 +34,10 @@ int	main(int ac, char *av[])
 
 //       !  ft_memmove WIP  !
 //          n = 5
+//	        12345
 //src  ->	       *12345___
-//dest ->             *45___
-//mmmove(dest) -> *123*12345
+//dest ->           *45___
+//mmmove(dest)->*123*12345
 /*
 #include <string.h>
 #include <stdlib.h>
@@ -65,5 +66,23 @@ int	main(int ac, char **av)
 		printf("ft_strchr -> %s\n", ft_strrchr(av[1], av[2][0]));	
 	else
 		printf("OG strtchr -> %s\n", strrchr(av[1], av[2][0]));	
+	return (0);
+}*/
+//           ft_memchr WIP
+/*
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+int	main(int ac, char **av)
+{
+	(void)ac;
+	if (atoi(av[4]) == 1){
+		void *temp = ft_memchr(av[1], av[2][0], atoi(av[3]));
+		printf("ft_memchr -> %p\n", temp);	
+	}
+	else{
+		void *temp = memchr(av[1], av[2][0], atoi(av[3]));
+		printf("OG memchr -> %p\n", temp);	
+	}
 	return (0);
 }*/
