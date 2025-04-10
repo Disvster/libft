@@ -37,7 +37,7 @@ int	main(int ac, char *av[])
 //src  ->	       *12345___
 //dest ->             *45___
 //mmmove(dest) -> *123*12345
-
+/*
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -54,4 +54,16 @@ int	main(int ac, char **av)
 	else
 		printf("ft_memmove -> %s\n", ft_memmove(t_av1, str, atoi(av[3])));
 	return 0;
+}*/
+/*
+#include <stdio.h>
+#include <stdlib.h>
+int	main(int ac, char **av)
+{
+	(void)ac;
+	if (atoi(av[3]) == 1)
+		printf("ft_strchr -> %s\n", ft_strrchr(av[1], av[2][0]));	
+	else
+		printf("OG strtchr -> %s\n", strrchr(av[1], av[2][0]));	
+	return (0);
 }*/
