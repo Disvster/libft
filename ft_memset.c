@@ -19,9 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	i = 0;
 	tab = s;
-	if (!n)
-		return (s);
 	while (i < n)
-		tab[i] = c;
+		tab[i++] = c;
 	return (s);
 }
