@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 13:52:31 by manmaria          #+#    #+#             */
-/*   Updated: 2025/04/11 23:39:22 by manmaria         ###   ########.fr       */
+/*   Created: 2025/04/11 17:56:27 by manmaria          #+#    #+#             */
+/*   Updated: 2025/04/11 18:14:45 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	const unsigned char	*p_src;
-	unsigned char		*p_dest;
-	size_t				i;
+	char	*sub;
+	size_t	i;
 
-	p_dest = dest;
-	p_src = src;
+	if (!s || start > ft_strlen(s))
+		return (NULL);
 	i = 0;
-	if (dest <= src)
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	while (s[i + start] && i < len)
 	{
-		while (i < n)
-		{
-			p_dest[i] = p_src[i];
-			i++;
-		}
+		sub[i] = s[i + start];
+		i++;
 	}
-	else if (dest > src)
-	{
-		while (n--)
-			p_dest[n] = p_src[n];
-	}
-	return (dest);
+	sub[i] = '\0';
+	return (sub);
 }

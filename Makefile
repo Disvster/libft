@@ -7,7 +7,7 @@ ARRCS = ar rcs
 RM = rm -f
 
 .c.o:
-	$(CC) $(CFLAGS) $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) $<
 
 $(NAME): $(OBJS)
 	$(ARRCS) $(NAME) $(OBJS)

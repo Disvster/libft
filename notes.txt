@@ -1,5 +1,5 @@
 
->>=<=<>=>=<<
+>>=<=<>=>=<< 
 !  for pointers:  !
 
 #include <stdio.h>

@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 13:52:31 by manmaria          #+#    #+#             */
-/*   Updated: 2025/04/11 23:39:22 by manmaria         ###   ########.fr       */
+/*   Created: 2025/04/11 18:09:05 by manmaria          #+#    #+#             */
+/*   Updated: 2025/04/11 18:40:24 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	const unsigned char	*p_src;
-	unsigned char		*p_dest;
-	size_t				i;
-
-	p_dest = dest;
-	p_src = src;
+	size_t	i;
+	size_t	ltotal;
+	char	*scat;
+	
+	if (!s1 && !s2)
+		return (NULL);
 	i = 0;
-	if (dest <= src)
+	ltotal = ft_strlen(s1) + ft_strlen(s2);
+	scat = malloc(sizeof(char) * (ltotal + 1));
+	while (s1[i])
 	{
-		while (i < n)
-		{
-			p_dest[i] = p_src[i];
-			i++;
-		}
+		scat[i] = s1[i];
+		i++;
 	}
-	else if (dest > src)
-	{
-		while (n--)
-			p_dest[n] = p_src[n];
+	i = 0;
+	while (s2[i])
+	{	
+		scat[i] = s2[i];
+		i++;
 	}
-	return (dest);
+	scat[i] = '\0';
+	return (scat);
 }
