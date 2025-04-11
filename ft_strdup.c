@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 19:18:43 by manmaria          #+#    #+#             */
-/*   Updated: 2025/04/10 19:49:01 by manmaria         ###   ########.fr       */
+/*   Created: 2025/04/11 17:04:15 by manmaria          #+#    #+#             */
+/*   Updated: 2025/04/11 17:52:18 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *s)
 {
-	char	*arr;
-	size_t	i;
-	size_t	mult;
-
-	mult = nmemb * size;
-	if (mult == 0)
-		return (malloc(0));
-	if ((size * nmemb) > (size_t)-1)
-		return (NULL);
+	char	*dup;
+	size_t	i;	
+	size_t	len;
+	
 	i = 0;
-	arr = (char *)malloc(mult);
-	while (i < nmemb)
-		arr[i++] = 0;
-	return (arr);
+	len = ft_strlen(s);
+	dup = (char *)malloc(sizeof(char) * (len + 1));
+	if (!len || !s)
+		return (NULL);
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }
