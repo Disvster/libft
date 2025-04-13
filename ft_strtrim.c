@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 //strim = (char *)malloc(sizeof(char) * (total_len + 1));
 //
 s1 -> "ola michel ola"
@@ -52,7 +52,23 @@ char	*ft_strtrim(char const *s1, char const *set)
 		*strim = s1[i++];
 	strim[i] = '\0';
 	return (strim);
-} 
+}*/
+
+static int	is_charset(char c, char *set)
+{
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*strim;
+}
 
 #include <stdio.h>
 int	main(int ac, char **av)
