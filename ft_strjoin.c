@@ -17,23 +17,35 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	ltotal;
 	char	*scat;
-	
-	if (!s1 && !s2)
+
+	if (!s1)
+		return (0);
+	ltotal = ft_strlen(s1) + ft_strlen(s2);
+	scat = (char *)malloc(sizeof(char) * (ltotal + 1));
+	if (!scat)
 		return (NULL);
 	i = 0;
-	ltotal = ft_strlen(s1) + ft_strlen(s2);
-	scat = malloc(sizeof(char) * (ltotal + 1));
-	while (s1[i])
+	while (i < ft_strlen(s1))
 	{
 		scat[i] = s1[i];
 		i++;
 	}
-	i = 0;
-	while (s2[i])
-	{	
-		scat[i] = s2[i];
+	while (i < ltotal)
+	{
+		scat[i] = s2[i - ft_strlen(s1)];
 		i++;
 	}
 	scat[i] = '\0';
 	return (scat);
 }
+/*
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	char *scat = ft_strjoin(av[1], av[2]);
+	(void)ac;
+	printf("s1 -> \"%s\"\nset -> \"%s\"", av[1], av[2]);
+	printf("\ncat strim -> \"%s\"\n", scat);
+	return 0;
+
+}*/
