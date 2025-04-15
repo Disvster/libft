@@ -15,17 +15,14 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*arr;
-	size_t	i;
 	size_t	mult;
 
 	mult = nmemb * size;
-	if (mult == 0)
-		return (malloc(0));
 	if ((size * nmemb) > (size_t)-1)
 		return (NULL);
-	i = 0;
 	arr = (char *)malloc(mult);
-	while (i < nmemb)
-		arr[i++] = 0;
+	if (!arr)
+		return (NULL);
+	ft_memset(arr, 0, mult);
 	return (arr);
 }
