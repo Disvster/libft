@@ -6,12 +6,12 @@
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 17:56:27 by manmaria          #+#    #+#             */
-/*   Updated: 2025/04/14 13:49:45 by manmaria         ###   ########.fr       */
+/*   Updated: 2025/04/15 18:19:31 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// WARNING:                   ""                 0             0
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
