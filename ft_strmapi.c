@@ -24,15 +24,15 @@
 //                              The function to apply to each character.
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*mapi;
-	size_t	i;
+	char			*mapi;
+	size_t			i;
 
 	i = ft_strlen(s);
-	while (s[i])
-	{
-		f((size_t)i, s[i]);
-		i++;
-	}
-	mapi = ft_strdup(s);
+	mapi = (char *)malloc(sizeof(char) * (i + 1));
+	if (!mapi)
+		return (NULL);
+	mapi[i] = '\0';
+	while (i-- > 0)
+		mapi[i] = f(i, s[i]);
 	return (mapi);
 }
