@@ -6,7 +6,7 @@
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:48:47 by manmaria          #+#    #+#             */
-/*   Updated: 2025/04/15 19:58:30 by manmaria         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:57:48 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,15 @@
 //                              The function to apply to each character.
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	
+	char	*mapi;
+	size_t	i;
+
+	i = ft_strlen(s);
+	while (s[i])
+	{
+		f((size_t)i, s[i]);
+		i++;
+	}
+	mapi = ft_strdup(s);
+	return (mapi);
 }
