@@ -18,11 +18,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	mult;
 
 	mult = nmemb * size;
-	if ((size * nmemb) > (size_t)-1)
-		return (NULL);
 	arr = (char *)malloc(mult);
 	if (!arr)
 		return (NULL);
-	ft_memset(arr, 0, mult);
+	ft_bzero(arr, mult);
 	return (arr);
 }
+//if ((size * nmemb) > (size_t)-1)
+//	return (NULL);
