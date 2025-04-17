@@ -6,7 +6,7 @@
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:55:02 by manmaria          #+#    #+#             */
-/*   Updated: 2025/04/15 18:24:36 by manmaria         ###   ########.fr       */
+/*   Updated: 2025/04/17 18:08:26 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static size_t	count_letters(char const *s, char c, char **p_s)
 	return (letters);
 }
 
-char	**free_split(char **split, size_t count)
+static char	**free_split(char **split, size_t count)
 {
 	size_t	i;
 
