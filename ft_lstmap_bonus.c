@@ -12,26 +12,37 @@
 
 #include "libft.h"
 
+static void	memorydel(t_list *mapi, t_list *nodi, void (*del)(void *))
+{
+	del(nodi);
+	ft_lstclear(&mapi, del);
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*newlst;
-	size_t	i;
+	t_list	*mapi;
+	t_list	*nodi;
+	t_list	*tmp;
 
-	newlst = (t_list *)malloc(sizeof(t_list) * ft_lstsize(lst));
-	if (!newlst)
+	if (!lst || !f || !del)
 		return (NULL);
+	mapi = NULL;
 	while (lst)
 	{
-		newlst->content = f(lst->content);
-		if (!newlst->content)
+		nodi = f(lst->content);
+		if (!nodi)
 		{
-			ft_lstdelone(lst, del);
+			ft_lstclear(&mapi, del);
 			return (NULL);
 		}
-		newlst->next = lst->next;
+		tmp = ft_lstnew(nodi);
+		if (!tmp)
+		{
+			memorydel(mapi, nodi, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&mapi, tmp);
 		lst = lst->next;
-		newlst++;
 	}
-	newlst = NULL;
-	return (newlst);
+	return (mapi);
 }

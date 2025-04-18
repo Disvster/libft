@@ -28,12 +28,13 @@ static size_t	count_words(char const *s, char c)
 	return (cw);
 }
 /*
-	while (s[i] == c && s[i])
+		while (s[i] == c && s[i])
 			i++;
 		if (s[i])
 			cw++;
 		while (s[i] != c && s[i])
 			i++;
+			letter++
 }
 */
 
@@ -51,12 +52,12 @@ static size_t	count_letters(char const *s, char c, char **p_s)
 	return (letters);
 }
 
-static char	**free_split(char **split, size_t count)
+static char	**free_split(char **split)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < count)
+	while (split[i])
 		free(split[i++]);
 	free(split);
 	return (NULL);
@@ -64,16 +65,16 @@ static char	**free_split(char **split, size_t count)
 
 char	**ft_split(char const *s, char c)
 {
+	char	**save;
 	char	**split;
 	size_t	words;
 	size_t	letters;
-	size_t	i;
 
 	words = count_words(s, c);
 	split = (char **)ft_calloc(words + 1, sizeof(char *));
 	if (!split)
 		return (NULL);
-	i = 0;
+	save = split;
 	while (*s)
 	{
 		while (*s == c && *s)
@@ -81,13 +82,13 @@ char	**ft_split(char const *s, char c)
 		if (*s)
 		{
 			letters = count_letters(s, c, (char **)&s);
-			split[i] = ft_substr(s - letters, 0, letters);
-			if (!split[i])
-				return (free_split(split, words));
-			i++;
+			*split = ft_substr(s - letters, 0, letters);
+			if (!*split)
+				return (free_split(save));
+			split++;
 		}
 	}
-	return (split);
+	return (split - words);
 }
 /*
 #include <stdio.h>
