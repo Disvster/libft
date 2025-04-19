@@ -14,19 +14,17 @@
 
 static size_t	count_words(char const *s, char c)
 {
-	size_t	i;
 	size_t	cw;
 
-	i = 0;
 	cw = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] == c && s[i])
-			i++;
-		if (s[i])
+		while (*s == c && *s)
+			s++;
+		if (*s)
 			cw++;
-		while (s[i] != c && s[i])
-			i++;
+		while (*s != c && *s)
+			s++;
 	}
 	return (cw);
 }
