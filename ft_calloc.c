@@ -17,6 +17,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	char	*arr;
 	size_t	mult;
 
+	if (nmemb * size > (size_t)-1)
+		return (NULL);
 	mult = nmemb * size;
 	arr = (char *)malloc(mult);
 	if (!arr)
