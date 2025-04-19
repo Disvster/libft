@@ -86,3 +86,61 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }*/
+	//ft_split main
+/*
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	char	**arr;
+	int	i;
+	
+	i = 0;
+	if (ac != 3)
+	{
+		printf("usage error, try -> %s <string> <string_separator>\n", av[0]);
+		return (1);
+	}
+	arr = ft_split(av[1], av[2][0]);
+	if (!arr)
+	{
+		printf("error >invalid string and/or separator<\n");
+		return (1);
+	}
+	printf("arr -> ");
+	while (arr[i])
+	{
+		if (arr[i + 1])
+			printf("\"%s\" ", arr[i]);
+		else if (!arr[i + 1])
+			printf("\"%s\"\n", arr[i]);
+		free (arr[i]);
+		i++;
+	}
+	//free(*arr);
+	//free(arr);
+	return 0;
+}*/
+
+//		ft_strim
+/*
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	char	*strim = ft_strtrim(av[1], av[2]);
+	(void)ac;
+	printf("s1 -> \"%s\"\nset -> \"%s\"", av[1], av[2]);
+	printf("\nstrim -> \"%s\"\n", strim);
+	return 0;
+}*/
+	ft_strjoin
+/*
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	char *scat = ft_strjoin(av[1], av[2]);
+	(void)ac;
+	printf("s1 -> \"%s\"\nset -> \"%s\"", av[1], av[2]);
+	printf("\ncat strim -> \"%s\"\n", scat);
+	return 0;
+
+}*/

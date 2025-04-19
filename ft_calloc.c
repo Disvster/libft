@@ -24,5 +24,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(arr, mult);
 	return (arr);
 }
-//if ((size * nmemb) > (size_t)-1)
-//	return (NULL);

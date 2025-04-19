@@ -29,9 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-/*{
-	if (!n)
-		return (0);
-	return (ft_strncmp(s1, s2, n));
-}*/

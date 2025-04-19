@@ -38,13 +38,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	strim = ft_substr(s1, 0, j);
 	return (strim);
 }
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	char	*strim = ft_strtrim(av[1], av[2]);
-	(void)ac;
-	printf("s1 -> \"%s\"\nset -> \"%s\"", av[1], av[2]);
-	printf("\nstrim -> \"%s\"\n", strim);
-	return 0;
-}*/

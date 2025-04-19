@@ -38,14 +38,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	scat[i] = '\0';
 	return (scat);
 }
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	char *scat = ft_strjoin(av[1], av[2]);
-	(void)ac;
-	printf("s1 -> \"%s\"\nset -> \"%s\"", av[1], av[2]);
-	printf("\ncat strim -> \"%s\"\n", scat);
-	return 0;
-
-}*/
