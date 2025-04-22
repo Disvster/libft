@@ -16,7 +16,6 @@ static size_t	count_words(char const *s, char c)
 {
 	size_t	cw;
 
-	cw = 0;
 	while (*s)
 	{
 		while (*s == c && *s)
