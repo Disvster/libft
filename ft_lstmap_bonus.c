@@ -36,3 +36,25 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (mapi);
 }
+/*
+void	rmv(void *cu)
+{
+	free(cu);
+	cu = NULL;
+}
+
+#include <stdio.h>
+int	main()
+{
+	t_list	*c;
+	t_list	*dup;
+	char	*str = "ola festas";
+
+	c->content = str;
+	c->next = 0;
+	dup = ft_lstmap(c, (void *)ft_strdup, rmv);
+	printf("%s", (char *)dup->content);
+	free(dup->content);
+	free(dup);
+	return (0);
+}*/
