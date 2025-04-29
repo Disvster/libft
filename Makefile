@@ -6,6 +6,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -c
 NAME = libft.a
 ARRCS = ar rcs
+ARRS = ar rs
 RM = rm -f
 
 .c.o:
@@ -14,9 +15,11 @@ RM = rm -f
 $(NAME): $(OBJS)
 	$(ARRCS) $(NAME) $(OBJS)
 
-bonus: $(NAME)
+$(BOBJS): $(BSRCS)
 	$(CC) $(CFLAGS) $(BSRCS)
-	ar rs $(NAME) $(BOBJS)
+
+bonus: $(NAME) $(BOBJS)
+	$(ARRS) $(NAME) $(BOBJS)
 
 all: $(NAME)
 	
