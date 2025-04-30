@@ -53,7 +53,7 @@ int	main()
 	c->content = str;
 	c->next = 0;
 	dup = ft_lstmap(c, (void *)ft_strdup, rmv);
-	printf("%s", (char *)dup->content);
+	printf("%s", dup->content);
 	free(dup->content);
 	free(dup);
 	return (0);
