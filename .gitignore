@@ -1,3 +1,4 @@
+.gitignore
 main.c
 libft.a
 a.out
