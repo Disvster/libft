@@ -90,7 +90,7 @@ char	*ft_negzeros(t_flags *fi, char *ret, size_t *len)
 	if (!p_s || !tmp)
 		return (free(tmp), free(p_s), NULL);
 	p_s[i++] = '-';
-	ft_strlcpy(p_s + 1, tmp, ft_strlen_pf(tmp) + 1);
+	ft_strlcpy_pf(p_s + 1, tmp, ft_strlen_pf(tmp) + 1);
 	*len = ft_strlen_pf(p_s);
 	return (free(tmp), p_s);
 }

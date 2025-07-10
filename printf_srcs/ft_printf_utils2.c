@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_strcmp(char *str1, char *str2)
+int	ft_strcmp_pf(char *str1, char *str2)
 {
 	int	i;
 

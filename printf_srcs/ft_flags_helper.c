@@ -55,14 +55,14 @@ char	*ft_has_precision(t_flags *fi, char *ret, size_t *len, char spec)
 	}
 	else if (fi->precision < *len && spec == 's')
 	{
-		if (ft_strcmp(ret, "(nil)") == 0 || ft_strcmp(ret, "(null)") == 0)
+		if (ft_strcmp_pf(ret, "(nil)") == 0 || ft_strcmp_pf(ret, "(null)") == 0)
 		{
 			*len = 0;
 			free(ret);
 			return (ft_strdup_pf(""));
 		}
 		*len = fi->precision;
-		ret = ft_substr(ret, 0, *len);
+		ret = ft_substr_pf(ret, 0, *len);
 	}
 	return (ret);
 }

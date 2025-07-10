@@ -34,7 +34,7 @@ char	*ft_see_format(const char *s, va_list varg)
 	else if (*s == 's')
 		return (return_val = ft_strdup_pf(va_arg(varg, char *)));
 	else if (*s == 'i' || *s == 'd')
-		return (return_val = ft_itoa(va_arg(varg, int)));
+		return (return_val = ft_itoa_pf(va_arg(varg, int)));
 	else if (*s == 'x' || *s == 'X' || *s == 'u')
 		return (return_val = ft_itoa_base(va_arg(varg, unsigned int), base));
 	else if (*s == 'p')

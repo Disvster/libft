@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_pf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 02:39:47 by manmaria          #+#    #+#             */
-/*   Updated: 2025/05/13 02:39:48 by manmaria         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:41:09 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char	*putnbr_str(int n, char *str)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa_pf(int n)
 {
 	char	*itoa;
 

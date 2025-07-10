@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_sub_cpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manmaria <manmaria@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 19:43:10 by manmaria          #+#    #+#             */
-/*   Updated: 2025/05/13 02:43:00 by manmaria         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:39:08 by manmaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy_pf(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (ft_strlen_pf(src));
 }
 
-char	*ft_substr(char *s, unsigned int start, size_t len)
+char	*ft_substr_pf(char *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;

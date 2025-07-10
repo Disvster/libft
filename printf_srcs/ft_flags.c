@@ -48,7 +48,7 @@ char	*ft_flags(const char *s, char *ret, int *p_fs, char *spec)
 
 	len = ft_strlen_pf(ret);
 	fi = ft_flagcheck(s, p_fs);
-	if (ft_strcmp(ret, "0") == 0 && !fi->precision && fi->in_precision)
+	if (ft_strcmp_pf(ret, "0") == 0 && !fi->precision && fi->in_precision)
 		ret = ft_minihelper(ret);
 	if (*spec == '%')
 		return (free(fi), ret);

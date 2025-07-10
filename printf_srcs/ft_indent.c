@@ -44,12 +44,12 @@ int	hash_init(size_t *len, size_t *i, int *k, t_flags *fi)
 	return (bow);
 }
 
-	//if (ft_strcmp(ret, "0") == 0)
+	//if (ft_strcmp_pf(ret, "0") == 0)
 	//	return (ret);
 
 char	*sethash_helper(char *ret)
 {
-	if (ft_strcmp(ret, "(nil)") == 0)
+	if (ft_strcmp_pf(ret, "(nil)") == 0)
 		return (ret);
 	else
 		return (ret);
@@ -62,7 +62,7 @@ char	*ft_sethash(char *ret, size_t *len, t_flags *fi, char spec)
 	int		k;
 	int		bow;
 
-	if (ft_strcmp(ret, "0") == 0 || ft_strcmp(ret, "(nil)") == 0)
+	if (ft_strcmp_pf(ret, "0") == 0 || ft_strcmp_pf(ret, "(nil)") == 0)
 		return (sethash_helper(ret));
 	bow = hash_init(len, &i, &k, fi);
 	p_s = calloc((*len + bow + 1), sizeof(char));
